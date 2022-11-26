@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Eidesis",
+        "cost": 210000,
+        "img": "eidesis.png",
+        "count": 5
+    },
+    {
+        "name": "Tecit",
+        "cost": 140000,
+        "img": "tecit.png",
+        "count": 5
+    },
+    {
+        "name": "Hwyl",
+        "cost": 145000,
+        "img": "hwyl.png",
+        "count": 5
+    },
+    {
+        "name": "Eremia",
+        "cost": 210000,
+        "img": "eremia.png",
+        "count": 5
+    },
+    {
+        "name": "Rose",
+        "cost": 195000,
+        "img": "rose.png",
+        "count": 5
+    },
+    {
+        "name": "Marrakech",
+        "cost": 155000,
+        "img": "marrakech.png",
+        "count": 5
+    }
+]
