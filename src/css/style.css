@@ -1,266 +1,243 @@
 @charset 'utf-8';
 
 /* 유틸리티 스타일 */
-
 .img-item {
-    display: block;
+  display: block;
 }
 
 /* 레이아웃 */
 body {
-    background: url(../img/bg2.png) no-repeat;
-    background-size: cover;
+  height: 100vh;
+  background: url(../img/bg2.png) no-repeat;
+  background-size: cover;
 }
 #app {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0 25px;
-    padding-top: 200px;
-    font-family: "Noto Sans KR", sans-serif;
-    font-weight: 500;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 25px;
+  padding-top: 200px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
 }
 #app .tit-app {
-    position: absolute;
-    text-align: center;
-    top: 0;
-    left: 50%;
-    width: 300px;
-    transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 50%;
+  width: 300px;
+  transform: translateX(-50%);
 }
 #app .vending-machine,
 #app .cont-get {
-    flex-basis: 360px;
+  flex-basis: 360px;
 }
 #app .tit-app .img-tit {
-    margin-top: 40px;
-    width: 100%;
+  margin-top: 40px;
+  width: 100%;
 }
 button:hover {
-    border-radius: 10px;
-    outline: 3px solid #c0b093;
+  border-radius: 10px;
+  outline: 3px solid #c0b093;
 }
 button:active {
-    border-radius: 10px;
-    outline: 1px solid #c0b093;
+  border-radius: 10px;
+  outline: 1px solid #c0b093;
 }
 
 /* 자판기 스타일 */
 #app .vending-machine {
-    padding: 25px;
-    background-color: white;
-    border-radius: 10px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 10px;
 }
 .vending-machine .ls-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
 .vending-machine .ls-item li {
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 }
 /* 품절 */
-/* .vending-machine .ls-item li.sold-out::before {
-    display: block;
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    border-radius: 10px;
-    background: no-repeat center rgba(137, 109, 121, 0.8);
-} 
-
-.vending-machine .ls-item li.sold-out {
-    pointer-events: none;
-} */
-
-.vending-machine .btn-item {
-    background-color: white;
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
+.vending-machine .ls-item li.sold-out::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 10px;
+  background: no-repeat center black;
+  opacity: 60%;
 }
-
+.vending-machine .ls-item li.sold-out {
+  pointer-events: none;
+}
+.vending-machine .btn-item {
+  background-color: white;
+  width: 100%;
+  padding: 5px;
+  padding-top: 10px;
+  border-radius: 10px;
+  border: none;
+}
 .vending-machine .ls-item .img-item {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
 }
 .vending-machine .tit-item {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 11px;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
 }
 .vending-machine .txt-price {
-    display: block;
-    padding: 3px 10px;
-    font-size: 12px;
-    border-radius: 5px;
-
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2) inset;
-    color: black;
+  display: block;
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2) inset;
+  color: black;
 }
 /* 장바구니 스타일 */
 .vending-machine .cart {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
 }
 .cart .balance,
 .cart .input-money,
 .cart .ls-item-staged {
-    grid-column: 1/3;
-    border-radius: 5px;
+  grid-column: 1/3;
+  border-radius: 5px;
 }
 .cart .btn-return,
 .cart .btn-put,
 .cart .btn-get {
-    border-radius: 5px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-    font-size: 13px;
-    border: none;
-    background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  border: none;
+  background-color: white;
 }
 .cart .btn-get {
-    background-color: #ece3d3;
+  background-color: #ece3d3;
 }
 .cart .balance {
-    font-size: 14px;
-    padding: 6px 10px;
-    background-color: #ece3d3;
+  font-size: 14px;
+  padding: 6px 10px;
+  background-color: #ece3d3;
 }
 .cart .balance .txt-balance {
-    float: right;
+  float: right;
 }
 .cart .input-money {
-    padding: 6px;
-    border: 1px solid #bdbdbd;
+  padding: 6px;
+  border: 1px solid #bdbdbd;
 }
-
 .ls-item-staged {
-    height: 106px;
-    padding: 12px;
-    overflow-y: scroll;
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
-    background-color: #ece3d3;
+  height: 106px;
+  padding: 12px;
+  overflow-y: scroll;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  background-color: #ece3d3;
 }
-
 .ls-item-staged li button {
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-    background-color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
-
 .ls-item-staged li + li {
-    margin-top: 6px;
+  margin-top: 6px;
 }
-
 .ls-item-staged .img-item,
 .ls-item-staged .txt-item {
-    float: left;
+  float: left;
 }
-
 .ls-item-staged .btn-stage {
-    width: 100%;
-    padding: 8px;
+  width: 100%;
+  padding: 8px;
 }
-
 .ls-item-staged .txt-item {
-    margin-left: 10px;
-    line-height: 40px;
-    font-size: 11px;
+  margin-left: 10px;
+  line-height: 40px;
+  font-size: 11px;
 }
-
 .ls-item-staged .num-counter {
-    float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 35px;
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 35px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
 }
-
 .ls-item-staged .img-item {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 /* 구매 목록 스타일 */
 .cont-get .cont-mymoney {
-    padding: 10px 30px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: #fff;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #fff;
 }
 .cont-get .info-mymoney {
-    padding: 5px 10px;
-    background-color: #ece3d3;
-    border-radius: 5px;
-    line-height: 20px;
-    font-size: 14px;
+  padding: 5px 10px;
+  background-color: #ece3d3;
+  border-radius: 5px;
+  line-height: 20px;
+  font-size: 14px;
 }
-
 .info-mymoney .txt-mymoney {
-    float: right;
-    font-weight: 700;
+  float: right;
+  font-weight: 700;
 }
-
 .cont-get .cont-myitems {
-    padding: 25px;
-    background-color: #fff;
-    border-radius: 10px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
 }
-
 .cont-myitems .tit-myitem {
-    display: block;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 10px;
-    line-height: 20px;
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 20px;
 }
-
 .cont-get .ls-item-staged {
-    height: 380px;
+  height: 380px;
 }
-
 .cont-get .txt-total {
-    display: block;
-    text-align: right;
-    margin-top: 5px;
-    font-size: 12px;
-    line-height: 20px;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 20px;
 }
-
 @media only screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    body {
-        background-color: #fff;
-    }
-
-    #app {
-        padding-top: 150px;
-    }
-
-    #app .tit-app {
-        width: 165px;
-    }
-    #app .tit-app .img-tit {
-        margin-top: 20px;
-        width: 150px;
-    }
-}
-.buri {
-    position: absolute;
-    top: 350px;
-    right: 164px;
+  body {
+    background-color: #fff;
+  }
+  #app {
+    padding-top: 150px;
+  }
+  #app .tit-app {
+    width: 165px;
+  }
+  #app .tit-app .img-tit {
+    margin-top: 20px;
+    width: 150px;
+  }
 }
