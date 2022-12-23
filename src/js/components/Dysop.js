@@ -123,14 +123,14 @@ class Dysop {
         this.modalGenerator(targetEl);
       });
 
-      item.addEventListener('mouseout', (event) => {
+      item.addEventListener('mouseout', () => {
         const onModal = document.querySelector('.modal-info');
         onModal.remove();
       });
     });
 
     // 획득 버튼 기능
-    this.btnGet.addEventListener('click', (event) => {
+    this.btnGet.addEventListener('click', () => {
       let totalPrice = 0;
       for (const itemStaged of this.stagedList.querySelectorAll('li')) {
         let isGot = false;
