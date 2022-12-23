@@ -226,6 +226,51 @@ button:active {
   font-size: 12px;
   line-height: 20px;
 }
+/* 모달 */
+.modal-info {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 20%;
+  text-align: center;
+}
+.modal-info .modal-blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #c0b093;
+  opacity: 80%;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+.modal-info .name-perf {
+  margin: 20px 0;
+  font-size: 25px;
+  z-index: 1;
+}
+.modal-info img {
+  width: 150px;
+  z-index: 1;
+}
+.modal-info .modal-desc {
+  margin: 10px 0;
+  z-index: 1;
+}
+.modal-info .modal-ingredient {
+  margin: 10px 0;
+  font-size: 14px;
+  z-index: 1;
+}
+.modal-info .modal-forWho {
+  margin-bottom: 10px;
+  font-size: 14px;
+  z-index: 1;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   body {
     background-color: #fff;

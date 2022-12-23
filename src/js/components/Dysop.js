@@ -13,12 +13,14 @@ class Dysop {
     this.myMoney = contGet.querySelector('.txt-mymoney');
     this.gotList = contGet.querySelector('.ls-item-staged');
     this.txtTotal = contGet.querySelector('.txt-total');
+
+    this.body = document.querySelector('body');
   }
   setup() {
     this.bindEvents();
   }
 
-  // 선택한 음료수 목록 생성
+  // 선택한 향수 목록 생성
   stagedItemGenerator(target) {
     const stagedItem = document.createElement('li');
     stagedItem.dataset.item = target.dataset.item;
@@ -31,6 +33,20 @@ class Dysop {
         </button>
         `;
     this.stagedList.appendChild(stagedItem);
+  }
+  // 선택한 향수 모달 생성
+  modalGenerator(target) {
+    const modal = document.createElement('article');
+    modal.classList.add('modal-info');
+    modal.innerHTML = `
+    <div class="modal-blur"></div>
+    <h2 class="name-perf">${target.dataset.item}</h2>
+    <img src="./src/img/${target.dataset.img}" alt="">
+    <p class="modal-desc">${target.dataset.desc}</p>
+    <p class="modal-ingredient">주요 성분 | ${target.dataset.ingredient}</p>
+    <p class="modal-forWho">대상 | ${target.dataset.forwho}</p>
+        `;
+    this.body.appendChild(modal);
   }
 
   bindEvents() {
@@ -100,6 +116,16 @@ class Dysop {
         } else {
           alert('잔액이 부족합니다. 돈을 입금해주세요');
         }
+      });
+      // 모달 등장 및 제거
+      item.addEventListener('mouseover', (event) => {
+        const targetEl = event.currentTarget;
+        this.modalGenerator(targetEl);
+      });
+
+      item.addEventListener('mouseout', (event) => {
+        const onModal = document.querySelector('.modal-info');
+        onModal.remove();
       });
     });
 
