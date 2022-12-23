@@ -8,7 +8,7 @@ class SlotGenerator {
     });
   }
   async loadData(callback) {
-    const res = await fetch('./src/js/itemsrc.json');
+    const res = await fetch('../itemsrc.json');
     if (res.ok) {
       callback(await res.json());
     } else {
