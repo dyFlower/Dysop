@@ -43,8 +43,7 @@ class Dysop {
       if (inputCost) {
         if (inputCost <= myMoneyVal && inputCost > 0) {
           this.myMoney.textContent = new Intl.NumberFormat().format(myMoneyVal - inputCost) + ' 원';
-          this.balance.textContent =
-            new Intl.NumberFormat().format((balanceVal ? balanceVal : 0) + inputCost) + ' 원';
+          this.balance.textContent = new Intl.NumberFormat().format((balanceVal ? balanceVal : 0) + inputCost) + ' 원';
         } else {
           alert('소지금이 부족합니다.');
         }
@@ -75,8 +74,7 @@ class Dysop {
         const stagedListItem = this.stagedList.querySelectorAll('li');
 
         if (balanceVal >= targetElPrice) {
-          this.balance.textContent =
-            new Intl.NumberFormat().format(balanceVal - targetElPrice) + ' 원';
+          this.balance.textContent = new Intl.NumberFormat().format(balanceVal - targetElPrice) + ' 원';
 
           for (const item of stagedListItem) {
             if (item.dataset.item === targetEl.dataset.item) {
@@ -113,9 +111,7 @@ class Dysop {
         for (const itemGot of this.gotList.querySelectorAll('li')) {
           let itemGotCount = itemGot.querySelector('.num-counter');
           if (itemStaged.dataset.item === itemGot.dataset.item) {
-            itemGotCount.textContent =
-              parseInt(itemGotCount.textContent) +
-              parseInt(itemStaged.querySelector('.num-counter').textContent);
+            itemGotCount.textContent = parseInt(itemGotCount.textContent) + parseInt(itemStaged.querySelector('.num-counter').textContent);
             isGot = true;
             break;
           }
@@ -128,8 +124,7 @@ class Dysop {
       this.stagedList.innerHTML = null;
 
       this.gotList.querySelectorAll('li').forEach((itemGot) => {
-        totalPrice +=
-          itemGot.dataset.price * parseInt(itemGot.querySelector('.num-counter').textContent);
+        totalPrice += itemGot.dataset.price * parseInt(itemGot.querySelector('.num-counter').textContent);
       });
       this.txtTotal.textContent = `총금액 : ${new Intl.NumberFormat().format(totalPrice)}원`;
     });
