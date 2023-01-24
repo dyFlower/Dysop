@@ -271,18 +271,43 @@ button:active {
   z-index: 1;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-width: 745px) and (-webkit-min-device-pixel-ratio: 2) {
   body {
-    background-color: #fff;
+    background-repeat: repeat-y;
   }
   #app {
     padding-top: 150px;
   }
-  #app .tit-app {
-    width: 165px;
-  }
+
   #app .tit-app .img-tit {
     margin-top: 20px;
-    width: 150px;
+    width: 250px;
+  }
+
+  .modal-info {
+    width: 80%;
+    height: 30%;
+    top: 60%;
+    left: 10%;
+  }
+  .modal-info img {
+    display: none;
+  }
+  .modal-info .name-perf {
+    font-size: 25px;
+  }
+  .modal-info .modal-desc {
+    margin: 8px 0;
+    z-index: 1;
+  }
+  .modal-info .modal-ingredient {
+    margin: 8px 0;
+    font-size: 14px;
+    z-index: 1;
+  }
+  .modal-info .modal-forWho {
+    margin-bottom: 8px;
+    font-size: 14px;
+    z-index: 1;
   }
 }
